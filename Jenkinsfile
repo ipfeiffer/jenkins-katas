@@ -6,6 +6,7 @@ pipeline {
         stage('Say hello') {
           steps {
             sh 'echo "Hello my dear World"'
+            sh 'echo "Hello to all others"'
           }
         }
 
