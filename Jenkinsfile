@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    node {
-      label 'host'
+    docker {
+      image 'gradle:jdk11'
     }
 
   }
