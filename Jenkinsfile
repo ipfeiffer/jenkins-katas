@@ -23,9 +23,15 @@ pipeline {
           }
         }
 
-        stage('test app') {
+        stage('clone down') {
+          agent {
+            node {
+              label 'host'
+            }
+
+          }
           steps {
-            sh 'junit \'app/build/test-results/test/TEST-*.xml\''
+            stash(name: 'code', excludes: '.git')
           }
         }
 
